@@ -1,0 +1,93 @@
+/* Đặt style cho phần body */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Style cho phần tiêu đề (header) */
+header {
+  background-color: #172efd;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+}
+
+/* Style cho tiêu đề của trang */
+header h1 {
+  margin: 0;
+}
+
+/* Đặt khung chứa ảnh nằm ngang giữa trang */
+.khung {
+  display: flex;
+  /* justify-content: center;*/
+  gap: 30px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+/* Style cho hình ảnh và chữ chèn lên trên */
+.hinhanh {
+  width: 200px;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.hinhanh img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.hinhanh:hover {
+  transform: scale(90%); /* Thu nhỏ khi rê chuột vào */
+}
+
+/* Đặt chữ lên ảnh */
+.chu {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: aqua;
+  background: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  padding: 10px 0;
+  font-size: 16px;
+}
+body {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.headerduoi {
+  background-color: #172efd;
+  color: white;
+  text-align: center;
+  padding: 30px;
+  width: 100%;
+  bottom: 0px;
+  left: 0;
+  justify-content: center; /* Căn giữa theo chiều dọc */
+  align-items: center; /* Căn giữa theo chiều ngang */
+  font-size: 18px; /* Tăng kích thước chữ */
+  box-sizing: border-box; /* Đảm bảo padding không làm tăng chiều cao */
+}
+.khunghinhchuyendong {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+.khunghinhchuyendong img {
+  width: 100%; /* Chiều ngang đầy khung */
+  height: 100%; /* Chiều cao phủ đầy khung */
+  object-fit: cover; /* Giữ tỷ lệ mà vẫn lấp đầy khung */
+  position: absolute;
+}
