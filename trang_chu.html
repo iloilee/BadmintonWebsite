@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <title>Badminton Store</title>
+    <style>
+      /* Đặt style cho phần body */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      /* Đặt khung chứa ảnh nằm ngang giữa trang */
+      .khung {
+        display: flex;
+        /* justify-content: center;*/
+        gap: 30px;
+        margin-top: 20px;
+        margin-bottom: 50px;
+      }
+      /* Style cho hình ảnh và chữ chèn lên trên */
+      .hinhanh {
+        width: 300px;
+        height: 400px;
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+      }
+      .hinhanh img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+      .hinhanh:hover {
+        transform: scale(90%); /* Thu nhỏ khi rê chuột vào */
+      }
+      /* Đặt chữ lên ảnh */
+      .chu {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        color: #f5f5f5;
+        background: rgba(0, 0, 0, 0.6);
+        text-align: center;
+        padding: 10px 0;
+        font-size: 20px;
+      }
+      body {
+        font-family: "Times New Roman", Times, serif;
+      }
+      .footer {
+        background-color: #59d9cc;
+        color: white;
+        text-align: center;
+        padding: 30px;
+        width: 100%;
+        bottom: 0px;
+        left: 0;
+        justify-content: center; /* Căn giữa theo chiều dọc */
+        align-items: center; /* Căn giữa theo chiều ngang */
+        font-size: 18px; /* Tăng kích thước chữ */
+        box-sizing: border-box; /* Đảm bảo padding không làm tăng chiều cao */
+      }
+      .khunghinhchuyendong {
+        width: 100%;
+        height: 500px;
+        position: relative;
+      }
+      .khunghinhchuyendong img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Giữ tỷ lệ mà vẫn lấp đầy khung */
+        position: absolute;
+        transition: opacity 1s ease; /*soomth 1s*/
+      }
+      .slideshow {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden; /*cắt*/
+      }
+      .slideshow img {
+        opacity: 0; /*độ mờ*/
+        position: absolute;
+        object-fit: cover;
+        transition: opacity 1s ease-in-out;
+      }
+      .slideshow img.active {
+        opacity: 1;
+      }
+
+      .menu1 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 10px;
+        background-color: white;
+      }
+      .menu1 .logo {
+        flex: 1; /*logo chiếm 1 góc trái*/
+        display: flex;
+        /* justify-content: flex-start; */
+        padding-left: 60px;
+      }
+      .menu1 .hotline {
+        flex: 4;
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Canh giữa */
+      }
+      .menu1 .icon {
+        flex: 1;
+        display: flex; /*logo chiếm 1 góc phải*/
+      }
+
+      .listicon {
+        display: flex;
+        list-style: none;
+        justify-content: space-between;
+        /* padding: 10px 10px; */
+      }
+      .listicon li{
+        padding: 10px 10px;
+        border: 2px solid #bc450a ;
+      }
+
+      .menu2 {
+        margin: 0; /* Xóa margin */
+        padding: 0; /* Xóa padding */
+      }
+
+      .menu2 {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+        background-color: #bc450a;
+        /* padding: 15px 15px; */
+      }
+
+      .menu2 .item-menu a {
+        color: white;
+        background-color: transparent;
+        text-decoration: none;
+        display: flex;
+        /* display: inline-block; */
+        justify-content: space-between;
+        padding: 15px 40px;
+        font-size: 14px;
+        font-weight: bold;
+      }
+      header {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="menu1">
+        <div class="logo">
+          <img
+            src="image/logo_bmc2.png"
+            alt="LogoBMC"
+            height="60"
+            width="120"
+          />
+        </div>
+        <div class="hotline">
+          <i class="fas fa-headset"></i>
+          <span> Hotline:</span>
+          <a href="#" title="Hotline: 0123456789|0987654321">
+            0123456789 | 0987654321</a
+          >
+          <input type="text" placeholder="Tìm sản phẩm..." />
+          <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="icon">
+          <ul class="listicon">
+            <li>
+              <img
+                src="image/icontracuu.png"
+                alt="tra cứu đơn hàng"
+                height="20px"
+                width="20px"
+              />
+            </li>
+            <li>
+              <img
+                src="image/iconuser.png"
+                alt="đăng nhập"
+                height="20px"
+                width="20px"
+              />
+            </li>
+            <li>
+              <img
+                src="image/iconshop.png"
+                alt="giỏ hàng"
+                height="20px"
+                width="20px"
+              />
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <ul class="menu2">
+          <li class="item-menu">
+            <a href="trang_chu.html" target="_self">TRANG CHỦ</a>
+          </li>
+          <li class="item-menu">
+            <a href="san-pham.html" target="_self">SẢN PHẨM</a>
+          </li>
+          <li class="item-menu">
+            <a href="tin-tuc.html" target="_self">TIN TỨC</a>
+          </li>
+          <li class="item-menu">
+            <a href="gioi-thieu.html" target="_self">GIỚI THIỆU</a>
+          </li>
+          <li class="item-menu">
+            <a href="lien-he.html" target="_self">LIÊN HỆ</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="khunghinhchuyendong">
+      <div class="slideshow">
+        <img
+          src="image/01-huyen-thoai-nguyen-tien-minh-1696592877730288972685.webp"
+          alt=""
+          class="active"
+        />
+        <img src="image/tl2.jpg" alt="" />
+        <img src="image/tl3.jpg" alt="" />
+        <img src="image/1000z-launch-website-banner_1695177885.webp" alt="" />
+        <img src="image/ac.png" alt="" />
+        <img src="image/ac2.webp" alt="" />
+      </div>
+    </div>
+    <!-- Phần hình ảnh nằm ngang giữa trang -->
+    <div class="khung">
+      <a href="vot_cau_long.html">
+        <div class="hinhanh">
+          <img
+            src="image/vot-cau-long-la-phu-kien-de-choi-cau-long.jpg"
+            alt="Vợt Cầu Lông"
+          />
+          <div class="chu">Vợt Cầu Lông</div>
+        </div>
+      </a>
+      <a href="giay_cau_long.html">
+        <div class="hinhanh">
+          <img
+            src="image/z5439128163323_8252497ca3f2b955f735454de9b51ef4_e8a184013a3b40668b53c160cf1d4f6e_master.webp"
+            alt="Giày Cầu Lông"
+          />
+          <div class="chu">Giày Cầu Lông</div>
+        </div>
+      </a>
+      <a href="ao_quan_cau_long.html">
+        <div class="hinhanh">
+          <img src="image/the-first-xanh-ya.jpg" alt="Áo Quần Cầu Lông" />
+          <div class="chu">Áo Quần Cầu Lông</div>
+        </div>
+      </a>
+      <a href="phu_kien_cau_long.html">
+        <div class="hinhanh">
+          <img src="image/phu-kien-cau-long.jpg" alt="Phụ Kiện Cầu Lông" />
+          <div class="chu">Phụ Kiện Cầu Lông</div>
+        </div>
+      </a>
+    </div>
+    <div>
+      <ul>
+        <li>Sản phẩm thứ 1</li>
+        <li>Sản phẩm thứ 2</li>
+        <li>Sản phẩm thứ 3</li>
+        <li>Sản phẩm thứ 4</li>
+        <li>Sản phẩm thứ 5</li>
+        <li>Sản phẩm thứ 6</li>
+        <li>Sản phẩm thứ 7</li>
+        <li>Sản phẩm thứ 8</li>
+        <li>Sản phẩm thứ 9</li>
+        <li>Sản phẩm thứ 10</li>
+        <li>Sản phẩm thứ 11</li>
+        <li>Sản phẩm thứ 12</li>
+        <li>Sản phẩm thứ 13</li>
+        <li>Sản phẩm thứ 14</li>
+        <li>Sản phẩm thứ 15</li>
+        <li>Sản phẩm thứ 16</li>
+        <li>Sản phẩm thứ 17</li>
+        <li>Sản phẩm thứ 18</li>
+        <li>Sản phẩm thứ 19</li>
+        <li>Sản phẩm thứ 20</li>
+        <li>Sản phẩm thứ 21</li>
+        <li>Sản phẩm thứ 22</li>
+        <li>Sản phẩm thứ 23</li>
+        <li>Sản phẩm thứ 24</li>
+        <li>Sản phẩm thứ 25</li>
+        <li>Sản phẩm thứ 26</li>
+        <li>Sản phẩm thứ 27</li>
+        <li>Sản phẩm thứ 28</li>
+        <li>Sản phẩm thứ 29</li>
+        <li>Sản phẩm thứ 30</li>
+      </ul>
+    </div>
+    <div class="footer">
+      <big>Công Ty TNHH 3 thành viên</big> <br />
+      Lý Tiểu Như sđt: 0705975167 gmail: nhufje@gmail.com <br />
+      Hồ Duy Khang sđt: 0795497643 gmail: khangfad@gmail.com <br />
+      Lê Hữu Lợi sđt: 07849632348 gmail:loilefs@gmail.com
+    </div>
+  </body>
+  <script>
+    let i = 0;
+    const images = document.querySelectorAll(".slideshow img"); //mảng
+    const dodaimang = images.length;
+
+    function hienthihinh() {
+      images[i].classList.remove("active"); // xóa active
+      i = (i + 1) % dodaimang; // quay lại hình 1
+      images[i].classList.add("active"); // thêm active
+    }
+
+    setInterval(hienthihinh, 2500);
+  </script>
+</html>
